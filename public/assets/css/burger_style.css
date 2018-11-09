@@ -1,0 +1,14 @@
+.img {
+  width: 50%;
+  height: 100%;
+}
+
+.form-group {
+  text-align: left;
+  padding: 15px; 
+  background-color: orangered; 
+}
+
+.btn {
+  margin: 10px;
+}

@@ -1,41 +1,52 @@
-     {{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto.
-
-     * Create a button in `index.handlebars` that will submit the user input into the database. --}}
-
-<h1>Burgers!</h1>
-
-<h2>Burgers that are ready to be devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have been devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="name">Burger Name:</label>
-    <input type="text" id="name" name="burger_name">
+<div class="row col-sm-12 mx-2 text-center">
+  <div class="row col-sm-12">
+    <img class="img" src="/assets/img/burger.png">
   </div>
+  <div class="row">
+    <div class="col-sm-7">
+      <h2>Burgers that are ready to be devoured!</h2>
+      <ul class="list-group-flush">
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
 
-    <div class="form-group">
-    <label for="description">Burger Ingredients:</label>
-    <input type="text" id="description" name="burger_description">
+      <h2>Burgers that have been devoured!</h2>
+
+      <ul class="list-group-flush">
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-sm-1"></div>
+
+    <div class="row col-sm-4">
+
+      <form class="create-form">
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <h6>Add a new burger!</h6>
+            <label for="name">Burger Name:</label>
+            <div class="col-sm-12">
+              <input type="text" id="name" name="burger_name">
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <label for="description">Ingredients:</label>
+            <div class="col-sm-12">
+              <input type="text" id="description" name="burger_description">
+            </div>
+          </div>
+          <button class="btn btn-success" type="submit">Add Burger</button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+</div>
