@@ -1,9 +1,9 @@
 var mysql = require("mysql");
 var connection;
 
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
   connection = mysql.createConnection({
     host: "localhost",
     port: process.env.PORT || 3306,
@@ -12,7 +12,7 @@ var connection;
     database: "burgers_db",
     use_env_variable: "JAWS_DB_URL"
   });
-// };
+};
 
 connection.connect(function (err) {
   if (err) {
